@@ -1,5 +1,5 @@
 package set
 
-type Entry interface {
-	Compare(another Entry) int
+type Entry[E any] interface {
+	Compare(another E) int
 }
