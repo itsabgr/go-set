@@ -26,13 +26,13 @@ func (set *Set[T]) Has(item T) bool {
 	return false
 }
 
-func (set *Set[T]) Get(item T) (_ T, found bool) {
+func (set *Set[T]) Get(item T) (t T, found bool) {
 	for e := set.items.Front(); e != nil; e = e.Next() {
 		if e.Value.Compare(item) == 0 {
 			return e.Value, true
 		}
 	}
-	return nil, false
+	return t, false
 }
 
 func (set *Set[T]) Add(item T) bool {
